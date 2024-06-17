@@ -28,9 +28,9 @@ threshold = 0.5
 microstates, entropy = MS(serie_1d, threshold)
 
 # Multidimensional time series
-serie_2d = rand(100, 3)
+serie_3d = rand(100, 3)
 threshold = 0.5
-microstates, entropy = MS(serie_2d, threshold)
+microstates, entropy = MS(serie_3d, threshold)
 
 Notes
 If the input series is one-dimensional, it is reshaped to a two-dimensional array with one column.
