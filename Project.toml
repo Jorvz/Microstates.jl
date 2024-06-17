@@ -1,7 +1,7 @@
 name = "Microstates"
 uuid = "36161bb8-d084-4d22-844f-8ce7d076efe9"
 authors = ["Jorge-Vinicius-Malosti-da-Silveira"]
-version = "1.0.0-DEV"
+version = "1.0.0"
 
 [deps]
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
