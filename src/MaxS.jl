@@ -25,12 +25,12 @@ Calculate the maximum entropy and optimal threshold of a given time series.
 # One-dimensional time series
 serie_1d = rand(100)
 threshold_range = (0.1, 0.5, 10)
-microstates, entropy = MaxS(serie_1d, threshold_range)
+S_max, best_eps = MaxS(serie_1d, threshold_range)
 
 # Multidimensional time series
 serie_3d = rand(100, 3)
 threshold_range = (0.01, 0.70, 20)
-microstates, entropy = MS(serie_3d, threshold_range)
+S_max, best_eps = MaxS(serie_3d, threshold_range)
 
 Notes
 For more info see MS() documentation
