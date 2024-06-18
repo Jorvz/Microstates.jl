@@ -2,20 +2,58 @@
 
 [![Build Status](https://github.com/Jorvz/Microstates.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/Jorvz/Microstates.jl/actions/workflows/CI.yml?query=branch%3Amain)
 =======
-## Descrição
+## Description
 
-`Microstates.jl` é um pacote para calcular as probabilidades associadas aos microestados a partir do Recurrence Plot. A partir dessas probabilidades, ele também pode estimar a entropia dos microestados de uma determinada série temporal. Esses métodos são úteis no contexto de sistemas dinâmicos, trabalhando com séries temporais caóticas, estocásticas ou periódicas.
+Microstates.jl is a package designed to calculate the probabilities associated with microstates from a Recurrence Plot. Based on these probabilities, it can also estimate the entropy of the microstates for a given time series. These methods are useful in the context of dynamical systems, dealing with chaotic, stochastic, or periodic time series.
 
-## Instalação
+## Installation
 
-Para instalar o pacote, você pode clonar o repositório e usar o `Pkg` para adicionar o pacote localmente:
+To install the package, you can clone the repository and use Pkg to add the package locally:
 
 ```julia
 using Pkg
 Pkg.add(url="https://github.com/Jorvz/Microstates.jl")
 ```
 
-## Referências
+or you can directly type:
+
+```julia
+using Pkg
+Pkg.add(Microstates)
+```
+
+## Exemple of Usage
+
+Calculating the microstate probabilities and the microstate entropy of a given time series is straightforward:
+
+```julia
+# One-dimensional time series
+serie_1d = rand(100)
+threshold = 0.5
+microstates, entropy = MS(serie_1d, threshold)
+
+# Multidimensional time series varying microstate size
+serie_3d = rand(100, 3)
+threshold = 0.5
+microstates, entropy = MS(serie_3d, threshold, Stats_Block=3)
+```
+
+One can also easily calculate the maximum microstate entropy as well as the threshold that maximizes it by using:
+
+```julia
+# One-dimensional time series
+serie_1d = rand(100)
+threshold_range = (0.1, 0.5, 10)
+S_max, best_eps = MaxS(serie_1d, threshold_range)
+
+# Multidimensional time series
+serie_3d = rand(100, 3)
+threshold_range = (0.01, 0.70, 20)
+S_max, best_eps = MaxS(serie_3d, threshold_range)
+```
+
+
+## References
 
 - DE LIMA PRADO, Thiago; MACHADO, Vandertone Santos; CORSO, Gilberto; DOS SANTOS LIMA, Gustavo Zampier; LOPES, Sergio Roberto. "How to compute suitable vicinity parameter and sampling time of recurrence analysis." Nonlinear Dynamics (Dordrecht. Online), v. 112, p. 1141-1152, 2023.
 
