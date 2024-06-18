@@ -15,7 +15,7 @@ using Pkg
 Pkg.add(url="https://github.com/Jorvz/Microstates.jl")
 ```
 
-##Referências
+## Referências
 
 - DE LIMA PRADO, Thiago; MACHADO, Vandertone Santos; CORSO, Gilberto; DOS SANTOS LIMA, Gustavo Zampier; LOPES, Sergio Roberto. "How to compute suitable vicinity parameter and sampling time of recurrence analysis." Nonlinear Dynamics (Dordrecht. Online), v. 112, p. 1141-1152, 2023.
 
