@@ -2,8 +2,6 @@ using Random, LinearAlgebra
 
 export MS
 
-function MS(Serie, Threshold; Window_Size = nothing, StatsBlock= 2, RP_percent= 0.05)
-    
 """
     MS(Serie, Threshold, Window_Size::Int = nothing, StatsBlock::Int = 2, RP_percent::Float64 = 0.05) where T
 
@@ -36,7 +34,7 @@ Notes
 If the input series is one-dimensional, it is reshaped to a two-dimensional array with one column.
 The function uses Euclidean distance for calculating the distances between points in the series.
 """
-
+function MS(Serie, Threshold; Window_Size = nothing, StatsBlock= 2, RP_percent= 0.05)
 
     if ndims(Serie) == 1
         Serie = reshape(Serie, :, 1)
